@@ -204,17 +204,8 @@ SH_COMMON_BUILD_SNIPPET: |
         # setup build env including stupid DOS workarounds
         {{ DOS_INIT }}
 
-
-        {% if axp_build_eng | bool and android_shortversion == 'a14' %}
-        breakfast lineage_{{ target_model }}-ap2a-eng
-        {% else if axp_build_eng | bool and android_shortversion != 'a14' % }
-        breakfast lineage_{{ target_model }}-eng
-        {% else if not axp_build_eng | bool and android_shortversion == 'a14' %}
         breakfast lineage_{{ target_model }}-ap2a-user
-        {% else % }
-        breakfast lineage_{{ target_model }}-user
-        {% endif %}
-        
+
         # CCACHE
         export USE_CCACHE={{ USE_CCACHE }}
         if [ "{{ USE_CCACHE }}" -eq 1 ];then
