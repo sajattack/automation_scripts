@@ -210,9 +210,17 @@ SH_COMMON_BUILD_SNIPPET: |
         {% endif %}
 
         {% if axp_build_eng | bool %}
+        {% if android_shortversion == 'a14' %}
+        breakfast lineage_{{ target_model }}-ap2a-eng
+        {% else % }
         breakfast lineage_{{ target_model }}-eng
+        {% endif %}
         {% else %}
+        {% if android_shortversion == 'a14' %}
+        breakfast lineage_{{ target_model }}-ap2a-user
+        {% else % }
         breakfast lineage_{{ target_model }}-user
+        {% endif %}
         {% endif %}
         
         # CCACHE
