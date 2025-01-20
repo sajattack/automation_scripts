@@ -28,7 +28,7 @@ git_private_repos: "platform_prebuilts_tools"
 # build vars
 os_name: "AXP.OS"
 #los_version: "{{ android_shortversion | replace('a13','20.0') | replace('a12','19.1') | replace('a11','18.1') | replace('a10','17.1') | replace('a9','16.0') }}"
-target_release: "{{% if android_shortversion == 'a14' %} 'ap2a-' {% else %} '' {% endif %}}"
+target_release: "{% if android_shortversion == 'a14' %} 'ap2a-' {% else %} '' {% endif %}"
 #git_repo_main_branch: "lineage-{{ los_version }}"
 git_repo_main_branch: "{{ los_version_gitbranch }}"
 #DOSPATH: "/home/androidsource/do-not-touch/{{ ROM_FLAVOR }}"
